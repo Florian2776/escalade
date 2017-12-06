@@ -2,24 +2,85 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- ================================================== -->
+  <!-- ===== Informations du projet ===== -->
+  <!-- ================================================== -->
+  <!-- ===== Informations Maven ===== -->
   <groupId>org.escalade.app</groupId>
   <artifactId>escalade</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
+  <!-- ===== Informations générales ===== -->
   <name>escalade</name>
+  <description>
+    Application communautaire pour tous les passionnés d'escalade.
+  </description>
   <url>http://maven.apache.org</url>
 
+  <!-- ===== Propriétés ===== -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
 
+  <!-- ===== Organisation ===== -->
+  <organization>
+    <name>Montagne et escalade</name>
+    <url>www.ffme.fr/</url>
+  </organization>
+
+  <!-- ===== Licences ===== -->
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <!-- ===== Gestion des dépendances ===== -->
   <dependencies>
+    <!-- ===== Modules ===== -->
     <dependency>
+      <!-- ===== bibliothèques tierces ===== -->
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <!-- ================================================== -->
+  <!-- ==== Build ==== -->
+  <!-- ================================================== -->
+  <build>
+    <!-- Gestion des plugins (version) -->
+    <pluginManagement>
+      <plugins>
+        <!-- Plugin responsable de la génération du fichier JAR -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <!-- Création du Manifest pour la définition de la classe Main -->
+            <manifest>
+              <mainClass>org.escalade.app.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
