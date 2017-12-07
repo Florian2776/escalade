@@ -52,6 +52,35 @@
   </dependencies>
 
   <!-- ================================================== -->
+  <!-- ===== Profils ===== -->
+  <!-- ================================================== -->
+  <profiles>
+    <!-- Profil pour l'environnement de test -->
+    <profile>
+      <id>test</id>
+      <build>
+        <resources>
+          <resource>
+            <directory>src/main/resources/conf-test</directory>
+          </resource>
+        </resources>
+      </build>
+    </profile>
+
+    <!-- Profil pour l'environnement de production -->
+    <profile>
+      <id>prod</id>
+      <build>
+        <resources>
+          <resource>
+            <directory>src/main/resources/conf-prod</directory>
+          </resource>
+        </resources>
+      </build>
+    </profile>
+  </profiles>
+
+  <!-- ================================================== -->
   <!-- ==== Build ==== -->
   <!-- ================================================== -->
   <build>
