@@ -1,24 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- ===================================================================== -->
+  <!-- ===== Informations du projet ===== -->
+  <!-- ===================================================================== -->
+  <!-- ===== Informations Maven ===== -->  
   <groupId>org.escalade.app</groupId>
   <artifactId>escalade</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <!-- ===== Informations générales ===== -->
   <name>escalade</name>
   <url>http://maven.apache.org</url>
 
+  <!-- ===================================================================== -->
+  <!-- ===== Properties ===== -->
+  <!-- ===================================================================== -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
+
+    <!-- ===================================================================== -->
+    <!-- ===== Gestion des dépendances ===== -->
+    <!-- ===================================================================== -->
+    <dependencyManagement>
+    <dependencies>
+        <!-- ===== Modules ===== -->
+        <dependency>
+            <groupId>org.escalade.app</groupId>
+            <artifactId>escalade-batch</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.escalade.app</groupId>
+            <artifactId>escalade-webapp</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.escalade.app</groupId>
+            <artifactId>escalade-business</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.escalade.app</groupId>
+            <artifactId>escalade-consumer</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.escalade.app</groupId>
+            <artifactId>escalade-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- ===== Bibliothèques tierces ===== -->
+
+    </dependencies>
+  </dependencyManagement>
+  
+  <!-- ===================================================================== -->
+  <!-- ===== Modules ===== -->
+  <!-- ===================================================================== -->
   <modules>
-    <module>ticket-batch</module>
-    <module>ticket-webapp</module>
-    <module>ticket-business</module>
-    <module>ticket-consumer</module>
-    <module>ticket-model</module>
     <module>escalade-batch</module>
     <module>escalade-webapp</module>
     <module>escalade-business</module>
