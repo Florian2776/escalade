@@ -89,10 +89,55 @@
     </dependency>
   </dependencies>
 
+  <profiles>
+    <!-- Profil pour l'environnement de développement -->
+    <profile>
+      <id>target-dev</id>
+
+    </profile>
+
+    <!-- Profil pour l'environnement de test -->
+    <profile>
+      <id>target-test</id>
+
+    </profile>
+
+    <!-- Profil pour l'environnement de production -->
+    <profile>
+      <id>target-prod</id>
+
+    </profile>
+  </profiles>
+
   <!-- ===================================================================== -->
   <!-- ===== Build ===== -->
   <!-- ===================================================================== -->
   <build>
     <finalName>escalade-webapp</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-profile-target</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireActiveProfil>
+                  <profiles>target-dev,target-test,target-prod</profiles>
+                  <all>false</all>
+                </requireActiveProfil>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
+
 </project>
