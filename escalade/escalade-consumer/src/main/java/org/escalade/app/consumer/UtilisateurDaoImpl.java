@@ -4,8 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.octest.beans.BeanException;
-import com.octest.beans.Utilisateur;
+import BeanException;
+import Utilisateur;
 
 public class UtilisateurDaoImpl implements UtilisateurDao {
     private DaoFactory daoFactory;
