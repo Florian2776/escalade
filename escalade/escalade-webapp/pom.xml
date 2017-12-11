@@ -123,9 +123,6 @@
           <execution>
             <id>enforce-profile-target</id>
             <phase>validate</phase>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
             <configuration>
               <rules>
                 <requireActiveProfil>
