@@ -1,4 +1,4 @@
-package com.octest.beans;
+package org.escalade.app.beans;
 
 public class Utilisateur {
     private String nom;
@@ -11,7 +11,7 @@ public class Utilisateur {
     
     public void setNom(String nom) throws BeanException {
         if (nom.length() < 2 || nom.length() > 10) {
-            throw new BeanException("Le nom doit faire au moins deux caractères et ne pas dépasser 10 caractères.");
+            throw new BeanException("Le nom doit faire au moins deux caractï¿½res et ne pas dï¿½passer 10 caractï¿½res.");
         } else {
             this.nom = nom; 
         }
@@ -23,7 +23,7 @@ public class Utilisateur {
     
     public void setPrenom(String prenom) throws BeanException {
     	if (prenom.length() < 2 || prenom.length() > 20) {
-            throw new BeanException("Le prénom doit faire au moins deux caractères et ne pas dépasser 20 caractères.");
+            throw new BeanException("Le prï¿½nom doit faire au moins deux caractï¿½res et ne pas dï¿½passer 20 caractï¿½res.");
         } else {
             this.prenom = prenom; 
         }
@@ -35,7 +35,7 @@ public class Utilisateur {
 
 	public void setPassword(String password) throws BeanException {
 		if (prenom.length() < 4 || prenom.length() > 15) {
-            throw new BeanException("La taille du mot de passe doit être comprise entre 4 et 15 caractères ");
+            throw new BeanException("La taille du mot de passe doit ï¿½tre comprise entre 4 et 15 caractï¿½res ");
         } else {
         	this.password = password; 
         }

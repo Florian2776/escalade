@@ -1,4 +1,4 @@
-package com.octest.dao;
+package org.escalade.app.dao;
 
 public class DaoException extends Exception {
     public DaoException(String message) {

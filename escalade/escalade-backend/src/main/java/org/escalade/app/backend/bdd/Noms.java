@@ -1,4 +1,4 @@
-package com.octest.bdd;
+package org.escalade.app.bdd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,8 +9,8 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.octest.beans.BeanException;
-import com.octest.beans.Utilisateur;
+import org.escalade.app.beans.BeanException;
+import org.escalade.app.beans.Utilisateur;
 
 public class Noms {
     private Connection connexion;
@@ -25,10 +25,10 @@ public class Noms {
         try {
             statement = connexion.createStatement();
 
-            // Exécution de la requête
+            // Exï¿½cution de la requï¿½te
             resultat = statement.executeQuery("SELECT nom, prenom FROM utilisateurs;");
 
-            // Récupération des données
+            // Rï¿½cupï¿½ration des donnï¿½es
             while (resultat.next()) {
                 String nom = resultat.getString("nom");
                 String prenom = resultat.getString("prenom");

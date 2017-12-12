@@ -5,7 +5,7 @@
     version="3.0">
     <servlet>
         <servlet-name>Servlet</servlet-name>
-        <servlet-class>com.octest.servlets.Servlet</servlet-class>
+        <servlet-class>org.escalade.app.servlets.Servlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -15,7 +15,7 @@
 
 	<servlet>
         <servlet-name>Inscription</servlet-name>
-        <servlet-class>com.octest.servlets.Inscription</servlet-class>
+        <servlet-class>org.escalade.app.servlets.Inscription</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -25,7 +25,7 @@
     
     <servlet>
         <servlet-name>Suppression</servlet-name>
-        <servlet-class>com.octest.servlets.Suppression</servlet-class>
+        <servlet-class>org.escalade.app.servlets.Suppression</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -36,7 +36,7 @@
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>
-            <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+            <include-prelude>taglibs.jsp</include-prelude>
         </jsp-property-group>
     </jsp-config>
 </web-app>

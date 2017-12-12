@@ -1,4 +1,4 @@
-package com.octest.servlets;
+package org.escalade.app.servlets;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.octest.beans.Utilisateur;
-import com.octest.dao.*;
+import org.escalade.app.beans.Utilisateur;
+import org.escalade.app.dao.*;
 
 /**
  * Inscription implementation class Inscription

@@ -1,4 +1,4 @@
-package com.octest.dao;
+package org.escalade.app.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,7 +33,7 @@ public class DaoFactory {
         return connexion; 
     }
 
-    // Récupération du Dao
+    // Rï¿½cupï¿½ration du Dao
     public UtilisateurDao getUtilisateurDao() {
         return new UtilisateurDaoImpl(this);
     }

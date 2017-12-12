@@ -1,11 +1,11 @@
-package com.octest.dao;
+package org.escalade.app.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.octest.beans.BeanException;
-import com.octest.beans.Utilisateur;
+import org.escalade.app.beans.BeanException;
+import org.escalade.app.beans.Utilisateur;
 
 public class UtilisateurDaoImpl implements UtilisateurDao {
     private DaoFactory daoFactory;
@@ -35,7 +35,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                 }
             } catch (SQLException e2) {
             }
-            throw new DaoException("Impossible de communiquer avec la base de données");
+            throw new DaoException("Impossible de communiquer avec la base de donnï¿½es");
         }
         finally {
             try {
@@ -43,7 +43,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                     connexion.close();  
                 }
             } catch (SQLException e) {
-                throw new DaoException("Impossible de communiquer avec la base de données");
+                throw new DaoException("Impossible de communiquer avec la base de donnï¿½es");
             }
         }
     }
@@ -71,9 +71,9 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                 utilisateurs.add(utilisateur);
             }
         } catch (SQLException e) {
-            throw new DaoException("Impossible de communiquer avec la base de données");
+            throw new DaoException("Impossible de communiquer avec la base de donnï¿½es");
         } catch (BeanException e) {
-            throw new DaoException("Les données de la base sont invalides");
+            throw new DaoException("Les donnï¿½es de la base sont invalides");
         }
         finally {
             try {
@@ -81,7 +81,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                     connexion.close();  
                 }
             } catch (SQLException e) {
-                throw new DaoException("Impossible de communiquer avec la base de données");
+                throw new DaoException("Impossible de communiquer avec la base de donnï¿½es");
             }
         }
         return utilisateurs;
@@ -107,7 +107,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                 }
             } catch (SQLException e2) {
             }
-            throw new DaoException("Impossible de communiquer avec la base de données");
+            throw new DaoException("Impossible de communiquer avec la base de donnï¿½es");
         }
         finally {
             try {
@@ -115,7 +115,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                     connexion.close();  
                 }
             } catch (SQLException e) {
-                throw new DaoException("Impossible de communiquer avec la base de données");
+                throw new DaoException("Impossible de communiquer avec la base de donnï¿½es");
             }
         }	
 	}

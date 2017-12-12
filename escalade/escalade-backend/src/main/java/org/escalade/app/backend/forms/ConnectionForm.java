@@ -1,4 +1,4 @@
-package com.octest.forms;
+package org.escalade.app.forms;
 
 public class ConnectionForm {
 	private String resultat;

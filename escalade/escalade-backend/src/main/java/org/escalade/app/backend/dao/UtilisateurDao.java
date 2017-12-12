@@ -1,4 +1,4 @@
-package com.octest.dao;
+package org.escalade.app.dao;
 
 import java.util.List;
 

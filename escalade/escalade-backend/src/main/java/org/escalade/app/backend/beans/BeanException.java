@@ -1,4 +1,4 @@
-package com.octest.beans;
+package org.escalade.app.beans;
 
 public class BeanException extends Exception {
     public BeanException(String message) {
