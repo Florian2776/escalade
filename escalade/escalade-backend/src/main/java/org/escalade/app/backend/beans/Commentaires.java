@@ -9,16 +9,29 @@ public class Commentaires {
 
     // constructeurs
     public Commentaires() {
-        this.id = null;
+        this.id = 0;
         this.auteur = null;
         this.date = null;
         this.message = null;
     }
 
-    public Articles(int id, String auteur, Date date, String message) {
+    public Articles(int id, String auteur, Date date, String message)
+                    throws BeanException {
+        if (id == 0){
+            throw new BeanException("Idenifiant du commentaire incorrect.");
+        }
         this.id = id;
+        if (auteur == null || auteur.compareTo("") == 0){
+            throw new BeanException("Auteur/Pseudo du commentaire incorrect.");
+        }
         this.auteur = auteur;
+        if (date == null){
+            throw new BeanException("Date du commentaire incorrect.");
+        }
         this.date = date;
+        if (message == null || message.compareTo("") == 0){
+            throw new BeanException("Message du commentaire incorrect.");
+        }
         this.message = message;
     }
 
@@ -27,8 +40,8 @@ public class Commentaires {
         return id;
     }
 
-    public void setId(int id) {
-        if (id == null){
+    public void setId(int id) throws BeanException {
+        if (id == 0){
             throw new BeanException("Idenifiant du commentaire incorrect.");
         }
         this.id = id;
@@ -38,7 +51,7 @@ public class Commentaires {
         return auteur;
     }
 
-    public void setAuteur(String auteur) {
+    public void setAuteur(String auteur) throws BeanException {
         if (auteur == null || auteur.compareTo("") == 0){
             throw new BeanException("Auteur/Pseudo du commentaire incorrect.");
         }
@@ -49,7 +62,10 @@ public class Commentaires {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Date date) throws BeanException {
+        if (date == null){
+            throw new BeanException("Date du commentaire incorrect.");
+        }
         this.date = date;
     }
 
@@ -57,7 +73,7 @@ public class Commentaires {
         return contenu;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(String message) throws BeanException {
         if (message == null || message.compareTo("") == 0){
             throw new BeanException("Message du commentaire incorrect.");
         }

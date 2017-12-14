@@ -12,7 +12,7 @@ public class Voie {
 
     // constructeurs
     public Voie() {
-        id = null;
+        id = 0;
         nom = null;
         hauteur = 0;
         cotation = null;
@@ -22,10 +22,19 @@ public class Voie {
     }
 
     public Voie(int id, String nom, int hauteur, String cotation,
-                int nbPoints, int nbLongueurs, int nbRelais) {
+                int nbPoints, int nbLongueurs, int nbRelais) throws BeanException {
+        if (id == 0) {
+            throw new BeanException("Identifiant de la voie incorect.");
+        }
         this.id = id;
+        if (nom == null || nom.compareTo("") == 0){
+            throw new BeanException("Nom de la voie incorrect.");
+        }
         this.nom = nom;
         this.hauteur = hauteur;
+        if (cotation == null || cotation.compareTo("") == 0){
+            throw new BeanException("Cotation de la voie incorrect.");
+        }
         this.cotation = cotation;
         this.nbPoints = nbPoints;
         this.nbLongueurs = nbLongueurs;
@@ -37,7 +46,10 @@ public class Voie {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) throws BeanException {
+        if (id == 0) {
+            throw new BeanException("Identifiant de la voie incorect.");
+        }
         this.id = id;
     }
 
@@ -45,7 +57,10 @@ public class Voie {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setNom(String nom) throws BeanException {
+        if (nom == null || nom.compareTo("") == 0){
+            throw new BeanException("Nom de la voie incorrect.");
+        }
         this.nom = nom;
     }
 
@@ -61,7 +76,10 @@ public class Voie {
         return cotation;
     }
 
-    public void setCotation(String cotation) {
+    public void setCotation(String cotation) throws BeanException {
+        if (cotation == null || cotation.compareTo("") == 0){
+            throw new BeanException("Cotation de la voie incorrect.");
+        }
         this.cotation = cotation;
     }
 

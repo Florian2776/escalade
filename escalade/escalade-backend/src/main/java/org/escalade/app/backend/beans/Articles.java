@@ -11,7 +11,7 @@ public class Articles throws BeanException {
 
     // constructeurs
     public Articles() {
-        this.id = null;
+        this.id = 0;
         this.titre = null;
         this.auteur = null;
         this.date = null;
@@ -20,12 +20,31 @@ public class Articles throws BeanException {
     }
 
     public Articles(int id, String titre, String auteur, Date date,
-                    String contenu,List<Commentaires> commentaires) {
+                    String contenu,List<Commentaires> commentaires)
+                    throws BeanException {
+        if (id == 0){
+            throw new BeanException("Identifiant de l'article incorrect.");
+        }
         this.id = id;
+        if (titre == null || titre.compareTo("") == 0){
+            throw new BeanException("Titre de l'article incorrect.");
+        }
         this.titre = titre;
+            if (auteur == null || auteur.compareTo("") == 0){
+            throw new BeanException("Auteur/Pseudo du commentaire incorrect.");
+        }
         this.auteur = auteur;
+        if (date == null){
+            throw new BeanException("Date de l'article incorrect.");
+        }
         this.date = date;
+        if (contenu == null || contenu.compareTo("") == 0){
+            throw new BeanException("Contenu de l'article incorrect.");
+        }
         this.contenu = contenu;
+        if (commentaires == null){
+            throw new BeanException("Commentaires de l'article incorrect.");
+        }
         this.commentaires = commetaires;
     }
 
@@ -34,9 +53,9 @@ public class Articles throws BeanException {
         return id;
     }
 
-    public void setId(int id) {
-        if (id == null){
-            throw new BeanException("Idenifiant de l'article incorrect.");
+    public void setId(int id) throws BeanException {
+        if (id == 0){
+            throw new BeanException("Identifiant de l'article incorrect.");
         }
         this.id = id;
     }
@@ -45,7 +64,7 @@ public class Articles throws BeanException {
         return titre;
     }
 
-    public void setTitre(String titre) {
+    public void setTitre(String titre) throws BeanException {
         if (titre == null || titre.compareTo("") == 0){
             throw new BeanException("Titre de l'article incorrect.");
         }
@@ -56,7 +75,7 @@ public class Articles throws BeanException {
         return auteur;
     }
 
-    public void setAuteur(String auteur) {
+    public void setAuteur(String auteur) throws BeanException {
         if (auteur == null || auteur.compareTo("") == 0){
             throw new BeanException("Auteur/Pseudo de l'article incorrect.");
         }
@@ -67,7 +86,10 @@ public class Articles throws BeanException {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Date date) throws BeanException {
+        if (date == null){
+            throw new BeanException("Date de l'article incorrect.");
+        }
         this.date = date;
     }
 
@@ -75,9 +97,9 @@ public class Articles throws BeanException {
         return contenu;
     }
 
-    public void setContenu(String contenu) {
+    public void setContenu(String contenu) throws BeanException {
         if (contenu == null || contenu.compareTo("") == 0){
-        throw new BeanException("Contenu de l'article incorrect.");
+            throw new BeanException("Contenu de l'article incorrect.");
         }
         this.contenu = contenu;
     }
@@ -86,7 +108,10 @@ public class Articles throws BeanException {
         return commentaires;
     }
 
-    public void setCommentaires(List<Commentaires> commentaires) {
+    public void setCommentaires(List<Commentaires> commentaires) throws BeanException {
+        if (commentaires == null || commentaires.compareTo("") == 0){
+            throw new BeanException("Commentaires de l'article incorrect.");
+        }
         this.commentaires = commentaires;
     }
 

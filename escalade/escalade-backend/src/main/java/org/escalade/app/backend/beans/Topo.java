@@ -5,27 +5,43 @@ public class Topo {
     private int id;
     private String region;
     private String proprietaire;
-    private boolean estDisponible;
+    private boolean disponible;
     private List<Date> dateLibre;
     private List<Site> site;
 
     // constructeurs
     public Topo() {
-        id = null;
+        id = 0;
         region= null;
         proprietaire = null;
-        estDisponible = false;
+        disponible = false;
         dateLibre = null;
         site = null;
     }
 
     public Topo(int id, String region, String proprietaire,
-                boolean estDisponible, List<Date> dateLibre, List<Site> site) {
+                boolean disponible, List<Date> dateLibre, List<Site> site)
+                throws BeanException {
+        if (id == 0){
+            throw new BeanException("Identifiant du topo incorrect.");
+        }
         this.id = id;
+        if (region == null || region.compareTo("") == 0){
+            throw new BeanException("Région du topo incorrect.");
+        }
         this.region= region;
+        if (proprietaire == null || proprietaire.compareTo("") == 0){
+            throw new BeanException("Propriétaire du topo incorrect.");
+        }
         this.proprietaire = proprietaire;
-        this.estDisponible = estDisponible;
+        this.disponible = disponible;
+        if (dateLibre == null){
+            throw new BeanException("Date de disponibilité du topo incorrect.");
+        }
         this.dateLibre = dateLibre;
+        if (site == null || site.compareTo("") == 0){
+            throw new BeanException("Site du topo incorrect.");
+        }
         this.site = site;
     }
 
@@ -34,7 +50,10 @@ public class Topo {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) throws BeanException {
+        if (id == 0){
+            throw new BeanException("Identifiant du topo incorrect.");
+        }
         this.id = id;
     }
 
@@ -42,7 +61,10 @@ public class Topo {
         return region;
     }
 
-    public void setRegion(String region) {
+    public void setRegion(String region) throws BeanException {
+        if (region == null || region.compareTo("") == 0){
+            throw new BeanException("Région du topo incorrect.");
+        }
         this.region = region;
     }
 
@@ -50,23 +72,29 @@ public class Topo {
         return proprietaire;
     }
 
-    public void setProprietaire(String proprietaire) {
+    public void setProprietaire(String proprietaire) throws BeanException {
+        if (proprietaire == null || proprietaire.compareTo("") == 0){
+            throw new BeanException("Propriétaire du topo incorrect.");
+        }
         this.proprietaire = proprietaire;
     }
 
-    public boolean isestDisponible() {
-        return estDisponible;
+    public boolean isDisponible() {
+        return disponible;
     }
 
-    public void setestDisponible(boolean estDisponible) {
-        this.estDisponible = estDisponible;
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 
     public List<Date> getdateLibre() {
         return dateLibre;
     }
 
-    public void setdateLibre(List<Date> dateLibre) {
+    public void setdateLibre(List<Date> dateLibre) throws BeanException {
+        if (dateLibre == null || dateLibre.compareTo("") == 0){
+            throw new BeanException("Date de disponibilité du topo incorrect.");
+        }
         this.dateLibre = dateLibre;
     }
 
@@ -74,8 +102,10 @@ public class Topo {
         return site;
     }
 
-    public void setSite(List<Site> site) {
+    public void setSite(List<Site> site) throws BeanException {
+        if (site == null || site.compareTo("") == 0){
+            throw new BeanException("Site du topo incorrect.");
+        }
         this.site = site;
     }
-
 }

@@ -9,16 +9,25 @@ public class voie {
 
     // constructeurs
     public Secteur() {
-        id = null;
+        id = 0;
         nom = null;
         nbVoies = 0;
         voie = null;
     }
 
-    public Secteur(int id, String nom, int nbVoies, List<Voie> voie) {
+    public Secteur(int id, String nom, int nbVoies, List<Voie> voie) throws BeanException {
+        if (id == 0){
+            throw new BeanException("Identifiant du secteur incorrect.");
+        }
         this.id = id;
+        if (nom == null){
+            throw new BeanException("Nom du secteur incorrect.");
+        }
         this.nom = nom;
         this.nbVoies = nbVoies;
+        if (voie == null){
+            throw new BeanException("Voie du secteur incorrect.");
+        }
         this.voie = voie;
     }
 
@@ -27,7 +36,10 @@ public class voie {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) throws BeanException {
+        if (id == null){
+            throw new BeanException("Identifiant du secteur incorrect.");
+        }
         this.id = id;
     }
 
@@ -35,7 +47,10 @@ public class voie {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setNom(String nom) throws BeanException {
+        if (nom == null || nom.compateTo("") == 0){
+            throw new BeanException("Nom du secteur incorrect.");
+        }
         this.nom = nom;
     }
 
@@ -51,7 +66,10 @@ public class voie {
         return voie;
     }
 
-    public void setvoie(List<Voie> voie) {
+    public void setvoie(List<Voie> voie) throws BeanException {
+        if (voie == null){
+            throw new BeanException("Voie du secteur incorrect.");
+        }
         this.voie = voie;
     }
 }

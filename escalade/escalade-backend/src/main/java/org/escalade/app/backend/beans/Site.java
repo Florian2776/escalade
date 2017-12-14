@@ -9,16 +9,26 @@ public class Site {
 
     // constructeurs
     public Site() {
-        id = null;
+        id = 0;
         nom = null;
         nbSecteurs = 0;
         secteur = null;
     }
 
-    public Site(int id, String nom, int nbSecteurs, List<Secteur> secteur) {
+    public Site(int id, String nom, int nbSecteurs, List<Secteur> secteur)
+            throws BeanException {
+        if (id == 0){
+            throw new BeanException("Identifiant du site incorrect.");
+        }
         this.id = id;
+        if (nom == null || nom.compareTo("") == 0){
+            throw new BeanException("Nom du site incorrect.");
+        }
         this.nom = nom;
         this.nbSecteurs = nbSecteurs;
+        if (secteur == null){
+            throw new BeanException("Secteur du site incorrect.");
+        }
         this.secteur = secteur;
     }
 
@@ -27,7 +37,10 @@ public class Site {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) throws BeanException {
+        if (id == 0){
+            throw new BeanException("Identifiant du site incorrect.");
+        }
         this.id = id;
     }
 
@@ -35,7 +48,10 @@ public class Site {
         return nom;
     }
 
-    public void setNom(String nom) {
+    public void setNom(String nom) throws BeanException {
+        if (nom == null || nom.compareTo("") == 0){
+            throw new BeanException("Nom du site incorrect.");
+        }
         this.nom = nom;
     }
 
@@ -51,7 +67,10 @@ public class Site {
         return secteur;
     }
 
-    public void setSecteur(List<Secteur> secteur) {
+    public void setSecteur(List<Secteur> secteur) throws BeanException {
+        if (secteur == null){
+            throw new BeanException("Secteur du site incorrect.");
+        }
         this.secteur = secteur;
     }
 }
