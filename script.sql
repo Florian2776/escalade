@@ -4,11 +4,11 @@ CREATE TABLE utilisateur(
 	naissance DATE,
 	mdp VARCHAR(20),
 	experience VARCHAR(20),
-	nbArticles INT 
+	nbArticles INT, 
 	nbTopos INT,
 	nbSites INT,
-	nbCommentaires INT,
-) engine=InnoDB;
+	nbCommentaires INT
+);
 
 CREATE TABLE contact(
 	idContact INT PRIMARY KEY,
@@ -16,7 +16,7 @@ CREATE TABLE contact(
 	prenom VARCHAR(20),
 	email VARCHAR(30), 
 	telephone INT 
-) engine=InnoDB;
+);
 
 CREATE TABLE topo(
 	idTopo INT PRIMARY KEY,
@@ -42,10 +42,10 @@ CREATE TABLE secteur(
 CREATE TABLE voie(
 	idVoie INT PRIMARY KEY,
 	nom VARCHAR(20),	
-	hauteur INT
-	cotation VARCHAR(20)
-	nbPoints INT
-	nbLongueurs INT
+	hauteur INT,
+	cotation VARCHAR(20),
+	nbPoints INT,
+	nbLongueurs INT,
 	nbRelais INT
 );
 
