@@ -17,6 +17,14 @@ Packagée (WAR) avec ApacheMaven
 
 ## Installation
 
+### Base de données
+Pour installer la base de données, il suffit :  
+1. d'être connecté à Postgresql; 
+2. de créer une base de données de nom escalade : CREATE DATABASE escalade;
+3. de lancer script.sql afin d'avoir toutes les tables nécessaires : \i script.sql;
+
+
+
 
 
 
