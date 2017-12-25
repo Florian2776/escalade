@@ -1,6 +1,10 @@
-package org.escalade.app.beans;
+package org.escalade.app.backend.beans;
 
-public class voie {
+import java.util.*;
+import org.escalade.app.backend.beans.Voie;
+
+
+public class Secteur {
     // attributs
     private int id;
     private String nom;
@@ -12,7 +16,7 @@ public class voie {
         id = 0;
         nom = null;
         nbVoies = 0;
-        voie = null;
+        voie = new ArrayList<Voie>();
     }
 
     public Secteur(int id, String nom, int nbVoies, List<Voie> voie) throws BeanException {
@@ -31,13 +35,13 @@ public class voie {
         this.voie = voie;
     }
 
-    // getter and voie
+    // getter and setters
     public int getId() {
         return id;
     }
 
     public void setId(int id) throws BeanException {
-        if (id == null){
+        if (id == 0){
             throw new BeanException("Identifiant du secteur incorrect.");
         }
         this.id = id;
@@ -48,7 +52,7 @@ public class voie {
     }
 
     public void setNom(String nom) throws BeanException {
-        if (nom == null || nom.compateTo("") == 0){
+        if (nom == null || nom.compareTo("") == 0){
             throw new BeanException("Nom du secteur incorrect.");
         }
         this.nom = nom;

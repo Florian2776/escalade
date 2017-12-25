@@ -1,11 +1,12 @@
-package org.escalade.app.dao;
+package org.escalade.app.backend.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.escalade.app.beans.BeanException;
-import org.escalade.app.beans.Utilisateur;
+import org.escalade.app.backend.beans.BeanException;
+import org.escalade.app.backend.beans.Utilisateur;
+import org.escalade.app.backend.dao.DaoException;
 
 public class UtilisateurDaoImpl implements UtilisateurDao {
     private DaoFactory daoFactory;
@@ -21,10 +22,8 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("INSERT INTO utilisateurs(nom, prenom, password) VALUES(?, ?, ?);");
-            preparedStatement.setString(1, utilisateur.getNom());
-            preparedStatement.setString(2, utilisateur.getPrenom());
-            preparedStatement.setString(3, utilisateur.getPassword());
+            preparedStatement = connexion.prepareStatement("INSERT INTO utilisateurs(npseudo) VALUES(?);");
+            preparedStatement.setString(1, utilisateur.getPseudo());
 
             preparedStatement.executeUpdate();
             connexion.commit();
@@ -35,7 +34,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                 }
             } catch (SQLException e2) {
             }
-            throw new DaoException("Impossible de communiquer avec la base de donn�es");
+            throw new DaoException("Impossible de communiquer avec la base de données");
         }
         finally {
             try {
@@ -43,7 +42,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                     connexion.close();  
                 }
             } catch (SQLException e) {
-                throw new DaoException("Impossible de communiquer avec la base de donn�es");
+                throw new DaoException("Impossible de communiquer avec la base de données");
             }
         }
     }
@@ -58,22 +57,20 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
         try {
             connexion = daoFactory.getConnection();
             statement = connexion.createStatement();
-            resultat = statement.executeQuery("SELECT nom, prenom FROM utilisateurs;");
+            resultat = statement.executeQuery("SELECT pseudo FROM utilisateurs;");
 
             while (resultat.next()) {
-                String nom = resultat.getString("nom");
-                String prenom = resultat.getString("prenom");
+                String pseudo = resultat.getString("pseudo");
 
                 Utilisateur utilisateur = new Utilisateur();
-                utilisateur.setNom(nom);
-                utilisateur.setPrenom(prenom);
+                utilisateur.setPseudo(pseudo);
 
                 utilisateurs.add(utilisateur);
             }
         } catch (SQLException e) {
-            throw new DaoException("Impossible de communiquer avec la base de donn�es");
+            throw new DaoException("Impossible de communiquer avec la base de données");
         } catch (BeanException e) {
-            throw new DaoException("Les donn�es de la base sont invalides");
+            throw new DaoException("Les données de la base sont invalides");
         }
         finally {
             try {
@@ -81,7 +78,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                     connexion.close();  
                 }
             } catch (SQLException e) {
-                throw new DaoException("Impossible de communiquer avec la base de donn�es");
+                throw new DaoException("Impossible de communiquer avec la base de données");
             }
         }
         return utilisateurs;
@@ -94,9 +91,8 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
 
         try {
             connexion = daoFactory.getConnection();
-            preparedStatement = connexion.prepareStatement("delete from utilisateurs where nom=? and prenom=?;");
-            preparedStatement.setString(1, utilisateur.getNom());
-            preparedStatement.setString(2, utilisateur.getPrenom());
+            preparedStatement = connexion.prepareStatement("delete from utilisateurs where pseudo=?;");
+            preparedStatement.setString(1, utilisateur.getPseudo());
 
             preparedStatement.executeUpdate();
             connexion.commit();
@@ -107,7 +103,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                 }
             } catch (SQLException e2) {
             }
-            throw new DaoException("Impossible de communiquer avec la base de donn�es");
+            throw new DaoException("Impossible de communiquer avec la base de données");
         }
         finally {
             try {
@@ -115,7 +111,7 @@ public class UtilisateurDaoImpl implements UtilisateurDao {
                     connexion.close();  
                 }
             } catch (SQLException e) {
-                throw new DaoException("Impossible de communiquer avec la base de donn�es");
+                throw new DaoException("Impossible de communiquer avec la base de données");
             }
         }	
 	}

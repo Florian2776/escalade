@@ -1,4 +1,7 @@
-package org.escalade.app.beans;
+package org.escalade.app.backend.beans;
+
+import java.util.*;
+
 
 public class Commentaires {
     // attributs
@@ -15,10 +18,10 @@ public class Commentaires {
         this.message = null;
     }
 
-    public Articles(int id, String auteur, Date date, String message)
+    public Commentaires(int id, String auteur, Date date, String message)
                     throws BeanException {
         if (id == 0){
-            throw new BeanException("Idenifiant du commentaire incorrect.");
+            throw new BeanException("Identifiant du commentaire incorrect.");
         }
         this.id = id;
         if (auteur == null || auteur.compareTo("") == 0){
@@ -41,8 +44,8 @@ public class Commentaires {
     }
 
     public void setId(int id) throws BeanException {
-        if (id == 0){
-            throw new BeanException("Idenifiant du commentaire incorrect.");
+        if (id == 0) {
+            throw new BeanException("Identifiant du commentaire incorrect.");
         }
         this.id = id;
     }
@@ -70,7 +73,7 @@ public class Commentaires {
     }
 
     public String getMessage() {
-        return contenu;
+        return message;
     }
 
     public void setMessage(String message) throws BeanException {
@@ -79,7 +82,5 @@ public class Commentaires {
         }
         this.message = message;
     }
-
-    // Outils
 
 }

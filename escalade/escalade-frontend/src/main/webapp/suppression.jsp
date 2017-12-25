@@ -18,13 +18,8 @@
     
 	<form method="post" action="suppression">
     	<p>
-	    	<label for="nom">Nom : </label>
-	    	<input type="text" name="nom" id="nom" />
-    	</p>
-    	
-    	<p>
-	    	<label for="prenom">Prénom : </label>
-	    	<input type="text" name="prenom" id="prenom" />
+	    	<label for="pseudo">Pseudo : </label>
+	    	<input type="text" name="pseudo" id="pseudo" />
     	</p>
     	
     	<input type="reset"  value="effacer" />
@@ -34,7 +29,7 @@
     <h2>Liste des utilisateurs inscrits :</h2>
     <ul>
 	    <c:forEach var="utilisateur" items="${ utilisateurs }">
-	    	<li><c:out value="${ utilisateur.prenom }" /> <c:out value="${ utilisateur.nom }" /></li>
+	    	<li><c:out value="${ utilisateur.pseudo }" /></li>
 	    </c:forEach>
 	</ul>    
 </body>

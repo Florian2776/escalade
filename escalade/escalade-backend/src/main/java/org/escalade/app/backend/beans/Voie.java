@@ -1,4 +1,4 @@
-package org.escalade.app.beans;
+package org.escalade.app.backend.beans;
 
 public class Voie {
     // attributs
@@ -84,17 +84,17 @@ public class Voie {
     }
 
     public int getNbPoints() {
-        return hauteur;
+        return nbPoints;
     }
 
     public void setNbPoints(int nbPoints) {
         this.nbPoints = nbPoints;
     }
 
-    public int getNbPoints() {
-        return hauteur;
+    public int getNbLongueurs() {
+    	return nbLongueurs;
     }
-
+    
     public void setNbLongueurs(int nbLongueurs) {
         this.nbLongueurs = nbLongueurs;
     }

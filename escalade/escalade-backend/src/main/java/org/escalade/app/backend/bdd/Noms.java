@@ -1,4 +1,4 @@
-package org.escalade.app.bdd;
+package org.escalade.app.backend.bdd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,8 +9,8 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.escalade.app.beans.BeanException;
-import org.escalade.app.beans.Utilisateur;
+import org.escalade.app.backend.beans.BeanException;
+import org.escalade.app.backend.beans.Utilisateur;
 
 public class Noms {
     private Connection connexion;
@@ -25,21 +25,23 @@ public class Noms {
         try {
             statement = connexion.createStatement();
 
-            // Ex�cution de la requ�te
-            resultat = statement.executeQuery("SELECT nom, prenom FROM utilisateurs;");
+            // Execution de la requete
+            resultat = statement.executeQuery("SELECT pseudo FROM utilisateurs;");
 
-            // R�cup�ration des donn�es
+            // Recuperation des donnees
             while (resultat.next()) {
-                String nom = resultat.getString("nom");
-                String prenom = resultat.getString("prenom");
+                String nom = resultat.getString("pseudo");
                 
                 Utilisateur utilisateur = new Utilisateur();
-                utilisateur.setNom(nom);
-                utilisateur.setPrenom(prenom);
+                utilisateur.setPseudo(nom);
+
+                // TODO
+
                 
                 utilisateurs.add(utilisateur);
             }
         } catch (SQLException e) {
+
         } catch (BeanException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,12 +64,12 @@ public class Noms {
     private void loadDatabase() {
         // Chargement du driver
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.postgresql.driver");
         } catch (ClassNotFoundException e) {
         }
 
         try {
-            connexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/escalade", "root", "password");
+            connexion = DriverManager.getConnection("jdbc:postgresql://localhost:3306/escalade", "root", "password");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -77,9 +79,8 @@ public class Noms {
         loadDatabase();
         
         try {
-            PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO utilisateurs(nom, prenom) VALUES(?, ?);");
-            preparedStatement.setString(1, utilisateur.getNom());
-            preparedStatement.setString(2, utilisateur.getPrenom());
+            PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO utilisateurs(pseudo) VALUES(?);");
+            preparedStatement.setString(1, utilisateur.getPseudo());
             
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -91,9 +92,8 @@ public class Noms {
         loadDatabase();
         
         try {
-            PreparedStatement preparedStatement = connexion.prepareStatement("delete from utilisateurs where nom=? and prenom=?;");
-            preparedStatement.setString(1, utilisateur.getNom());
-            preparedStatement.setString(2, utilisateur.getPrenom());
+            PreparedStatement preparedStatement = connexion.prepareStatement("delete from utilisateurs wherepseudo=?;");
+            preparedStatement.setString(1, utilisateur.getPseudo());
             
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

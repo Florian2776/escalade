@@ -1,4 +1,7 @@
-package org.escalade.app.beans;
+package org.escalade.app.backend.beans;
+
+import java.util.*;
+
 
 public class Site {
     // attributs

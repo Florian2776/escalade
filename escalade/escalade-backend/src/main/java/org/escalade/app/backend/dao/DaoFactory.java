@@ -1,4 +1,4 @@
-package org.escalade.app.dao;
+package org.escalade.app.backend.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,13 +17,13 @@ public class DaoFactory {
 
     public static DaoFactory getInstance() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
 
         }
 
         DaoFactory instance = new DaoFactory(
-                "jdbc:mysql://localhost:3306/escalade", "root", "password");
+                "jdbc:postgresql://localhost:3306/escalade", "postgres", "password");
         return instance;
     }
 
@@ -33,7 +33,7 @@ public class DaoFactory {
         return connexion; 
     }
 
-    // R�cup�ration du Dao
+    // Recup�ration du Dao
     public UtilisateurDao getUtilisateurDao() {
         return new UtilisateurDaoImpl(this);
     }

@@ -1,8 +1,11 @@
-package org.escalade.app.beans;
+package org.escalade.app.backend.beans;
 
-public class Articles throws BeanException {
+import java.util.*;
+import org.escalade.app.backend.beans.*;
+
+public class Articles {
     // attributs
-    private int id;
+	private int id;
     private String titre;
     private String auteur;
     private Date date;
@@ -45,7 +48,7 @@ public class Articles throws BeanException {
         if (commentaires == null){
             throw new BeanException("Commentaires de l'article incorrect.");
         }
-        this.commentaires = commetaires;
+        this.commentaires = commentaires;
     }
 
     // Getters and setters
@@ -109,7 +112,7 @@ public class Articles throws BeanException {
     }
 
     public void setCommentaires(List<Commentaires> commentaires) throws BeanException {
-        if (commentaires == null || commentaires.compareTo("") == 0){
+        if (commentaires == null){
             throw new BeanException("Commentaires de l'article incorrect.");
         }
         this.commentaires = commentaires;

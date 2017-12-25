@@ -1,9 +1,10 @@
-package org.escalade.app.beans;
+package org.escalade.app.backend.beans;
 
 import java.util.regex.*;
+import java.util.*;
 
 
-public class Contact throws BeanException {
+public class Contacts {
     // attributs
     private int id;
     private String nom;
@@ -12,20 +13,19 @@ public class Contact throws BeanException {
     private String tel;
 
     // constructeurs
-    public Contact() {
+    public Contacts() {
         id = 0;
         nom = null;
         prenom = null;
         email = null;
-        mdp = null;
         tel = null;
     }
 
-    public Contact(int id, String nom, String prenom,
-                    String email, String mdp, String tel)
+    public Contacts(int id, String nom, String prenom,
+                    String email, String tel)
                     throws BeanException {
         if (id == 0){
-            throw new BeanException("Idenifiant du contact incorrect.");
+            throw new BeanException("Identifiant du contact incorrect.");
         }
         this.id = id;
         if (nom == null || nom.compareTo("") == 0){
@@ -41,15 +41,11 @@ public class Contact throws BeanException {
         }
 
         if (!verificationEmail(email)) {
-        throw new BeanException("Adresse email du contact non valide.");
+            throw new BeanException("Adresse email du contact non valide.");
         }
         this.email = email;
-        if (mdp == null || mdp.compareTo("") == 0){
-            throw new BeanException("Mot de passe du contact incorrect.");
-        }
-        this.mdp = mdp;
-        if (tel == null || tel.compareTo("") == 0){
-            throw new BeanException("Numéro de téléphone du contact incorrect.");
+        if (tel.compareTo("") == 0) {
+            throw new BeanException("Téléphone du contact non valide.");
         }
         this.tel = tel;
     }
@@ -59,9 +55,9 @@ public class Contact throws BeanException {
         return id;
     }
 
-    public void setId(int id) throws BeanException{
+    public void setId(int id) throws BeanException {
         if (id == 0){
-            throw new BeanException("Idenifiant du contact incorrect.");
+            throw new BeanException("Identifiant du contact incorrect.");
         }
         this.id = id;
     }
@@ -70,7 +66,7 @@ public class Contact throws BeanException {
         return nom;
     }
 
-    public void setNom(String nom)  throws BeanException {
+    public void setNom(String nom) throws BeanException {
         if (nom == null || nom.compareTo("") == 0){
             throw new BeanException("Nom du contact incorrect.");
         }
@@ -88,24 +84,13 @@ public class Contact throws BeanException {
         this.prenom = prenom;
     }
 
-    public String getMdp() {
-        return mdp;
-    }
-
-    public void setMdp(String mdp) throws BeanException {
-        if (mdp == null || mdp.compareTo("") == 0){
-            throw new BeanException("Mot de passe du contact incorrect.");
-        }
-        this.mdp = mdp;
-    }
-
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) throws BeanException {
         if (email == null || email.compareTo("") == 0){
-            throw new BeanException("Nom du contact incorrect.");
+            throw new BeanException("Email du contact incorrect.");
         }
 
         if (!verificationEmail(email)) {

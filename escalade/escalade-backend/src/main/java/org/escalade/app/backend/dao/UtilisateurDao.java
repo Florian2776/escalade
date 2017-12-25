@@ -1,8 +1,9 @@
-package org.escalade.app.dao;
+package org.escalade.app.backend.dao;
 
 import java.util.List;
 
-import com.octest.beans.Utilisateur;
+import org.escalade.app.backend.beans.Utilisateur;
+import org.escalade.app.backend.dao.DaoException;
 
 public interface UtilisateurDao {
     void ajouter( Utilisateur utilisateur ) throws DaoException;

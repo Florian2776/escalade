@@ -15,9 +15,29 @@
 
   <body>
     <div class="container">
-      <header class="page-header">
-        <h1>Montagne et escalade</h1>
-      </header>
+        <header class="page-header">
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="">Montagne et escalade</a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="index.html">Accueil</a></li>
+                  <li><a href="decouvrir.html">Découvrir</a></li>
+                  <li><a href="topo.html">Topo</a></li>
+                  <li><a href="article.html">Article</a></li>
+                  <li><a href="site.html">Site</a></li>
+                  <li><a href="forum.html">Forum</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="inscription.html"><span class="glyphicon glyphicon-user"></span> Nouveau membre</a></li>
+                  <li><a href="espace.html"><span class="glyphicon glyphicon-log-in"></span> Déjà membre</a></li>
+                </ul>
+              </div>
+            </nav>
+         </header>
+
       <section class="row" >
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <p class="text-left">

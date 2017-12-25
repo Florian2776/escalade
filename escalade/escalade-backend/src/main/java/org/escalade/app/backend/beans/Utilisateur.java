@@ -1,14 +1,20 @@
-package org.escalade.app.beans;
+package org.escalade.app.backend.beans;
+
+import java.util.*;
 
 public class Utilisateur {
     // attributs
-    public enum Niveau{
+    public enum Niveau {
         DEBUTANT("débutant"),
         INTERMEDIAIRE("intermédiaire"),
         CONFIRME("confirmé");
 
         private String niv = "";
-
+        
+        Niveau(String n) {
+        	niv = n;
+        }
+        
         public String getNiv() {
             return niv;
         }
@@ -50,7 +56,7 @@ public class Utilisateur {
             throw new BeanException("Pseudo de l'utilisateur incorrect.");
         }
         this.pseudo = pseudo;
-        if (naissance == null || naissance.compareTo("") == 0){
+        if (naissance == null){
             throw new BeanException("Date de naissance de l'utilisateur incorrect.");
         }
         this.naissance = naissance;
@@ -97,7 +103,7 @@ public class Utilisateur {
     }
 
     public void setNaissance(Date naissance) throws BeanException {
-        if (naissance == null || naissance.compareTo("") == 0){
+        if (naissance == null){
             throw new BeanException("Date de naissance de l'utilisateur incorrect.");
         }
         this.naissance = naissance;
@@ -114,7 +120,7 @@ public class Utilisateur {
         this.mdp = mdp;
     }
 
-    public Niveau getExperience() {
+    public String getExperience() {
         return experience.getNiv();
     }
 

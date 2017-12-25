@@ -1,4 +1,7 @@
-package org.escalade.app.beans;
+package org.escalade.app.backend.beans;
+
+import java.util.*;
+
 
 public class Topo {
     // attributs
@@ -39,7 +42,7 @@ public class Topo {
             throw new BeanException("Date de disponibilité du topo incorrect.");
         }
         this.dateLibre = dateLibre;
-        if (site == null || site.compareTo("") == 0){
+        if (site == null){
             throw new BeanException("Site du topo incorrect.");
         }
         this.site = site;
@@ -92,7 +95,7 @@ public class Topo {
     }
 
     public void setdateLibre(List<Date> dateLibre) throws BeanException {
-        if (dateLibre == null || dateLibre.compareTo("") == 0){
+        if (dateLibre == null){
             throw new BeanException("Date de disponibilité du topo incorrect.");
         }
         this.dateLibre = dateLibre;
@@ -103,7 +106,7 @@ public class Topo {
     }
 
     public void setSite(List<Site> site) throws BeanException {
-        if (site == null || site.compareTo("") == 0){
+        if (site == null){
             throw new BeanException("Site du topo incorrect.");
         }
         this.site = site;
