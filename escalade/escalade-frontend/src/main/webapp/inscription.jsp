@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Inscription</title>
+    <title>Inscription</title>
 </head>
+
 <body>
 
 	<%@ include file="menu.jsp" %>
@@ -21,9 +22,53 @@
 	    	<label for="pseudo">Pseudo : </label>
 	    	<input type="text" name="pseudo" id="pseudo" />
     	</p>
-    	
-    	<input type="reset"  value="effacer" />
-    	<input type="submit"  value="s'inscrire" />
+
+    	<p>
+            <label for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom" />
+        </p>
+
+    	<p>
+            <label for="prenom">Prénom : </label>
+            <input type="text" name="prenom" id="prenom" />
+        </p>
+
+        <p>
+            <label for="naissance">Date de naissance : </label>
+            <input type="date" name="naissance" id="naissance" />
+        </p>
+
+        <p>
+            <label for="mdp">Mot de passe : </label>
+            <input type="password" name="mdp" id="mdp" />
+        </p>
+
+        <p>
+            <label for="mdp2">Confirmation du mot de passe : </label>
+            <input type="password" name="mdp2" id="mdp2" />
+        </p>
+
+        <p>
+            <label for="experience">Niveau d&apos;experience :</label>
+            <select name="experience" id="experience" size="1">
+                <option value="debutant" selected>Débutant</option>
+                <option value="intermediaire">Intermédiaire</option>
+                <option value="expert">Expert</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email" />
+        </p>
+
+        <p>
+            <label for="tel">Téléphone : </label>
+            <input type="tel" name="tel" id="tel" />
+        </p>
+
+    	<input type="reset"  value="réinitialisation" />
+    	<input type="submit"  value="inscription" />
     </form>
     
     <h2>Liste des utilisateurs inscrits :</h2>

@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.escalade.app.Utilisateur;
-import org.escalade.app.dao.*;
+import org.escalade.app.backend.beans.Utilisateur;
+import org.escalade.app.backend.dao.*;
 
 /**
  * Servlet implementation class Servlet

@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.escalade.app.Utilisateur;
-import org.escalade.app..dao.*;
+import org.escalade.app.backend.beans.Utilisateur;
+import org.escalade.app.backend.dao.*;
 
 /**
  * Suppression implementation class Suppression
@@ -37,8 +37,14 @@ public class Suppression extends HttpServlet {
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         try {
             Utilisateur utilisateur = new Utilisateur();
+            utilisateur.setPseudo(request.getParameter("pseudo"));
             utilisateur.setNom(request.getParameter("nom"));
             utilisateur.setPrenom(request.getParameter("prenom"));
+            utilisateur.setNaissance(request.getParameter("naissance"));
+            utilisateur.setMotDePasse(request.getParameter("mdp"));
+            utilisateur.setExperience(request.getParameter("experience"));
+            utilisateur.setEmail(request.getParameter("email"));
+            utilisateur.setTelephone(request.getParameter("tel"));
             
             utilisateurDao.supprimer(utilisateur);
             request.setAttribute("utilisateurs", utilisateurDao.lister());
