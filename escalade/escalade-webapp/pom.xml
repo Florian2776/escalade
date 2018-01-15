@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- Informations du projet -->
+  <!-- Parent -->
+  <parent>
+    <groupId>org.exemple.demo</groupId>
+    <artifactId>escalade</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  
+  <!--  Informations Maven --> 
+  <artifactId>escalade-webapp</artifactId>
+  <packaging>war</packaging>
+  
+  <!-- Propriétés -->
+  <properties>
+  	<!-- Le nom "public" de l'application -->
+    <application.name>Escalade</application.name>
+    
+    <!-- Le format à utiliser pour afficher la date du build -->
+    <maven.build.timestamp.format>dd/MM/yyyy</maven.build.timestamp.format>
+    
+    <!-- Propriété servant à contourner le bug du non remplacement
+         de la propriété maven.build.timestamp lors du filtrage des ressources -->
+    <buildTimestamp>${maven.build.timestamp}</buildTimestamp>
+  
+  	<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+    <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+  </properties>
+  
+  <!-- Informations générales -->
+  <!-- <name>escalade-webapp Maven Webapp</name> -->
+  <name>Escalade</name>
+  <description>
+  	Application d'escalade permettant de partager 
+  	diverses informations entre membres.
+  </description>
+  <url>http://localhost:8080/escalade-webapp/</url>
+  
+  <organization>
+  	<name>Club d'escalade</name>
+  	<url>http://www.ffme.fr</url>
+  </organization>
+  
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  
+  <!-- Dépendances -->
+  <dependencies>
+    <!-- Modules -->
+    <dependency>
+        <groupId>org.exemple.demo</groupId>
+        <artifactId>escalade-business</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.exemple.demo</groupId>
+        <artifactId>escalade-model</artifactId>
+    </dependency>
+  
+    <!-- Bibilothèques tierces -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      </dependency>
+    
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>jsp-api</artifactId>
+	</dependency>
+    
+    <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <scope>compile</scope>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.apache.bval</groupId>
+        <artifactId>bval-jsr</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+  
+  <!-- Profiles -->
+  <profiles>
+      <!-- Profil pour l'environnement de développement -->
+      <profile>
+          <id>target-dev</id>
+          
+      </profile>
+
+      <!-- Profil pour l'environnement de test -->
+      <profile>
+          <id>target-test</id>
+          
+      </profile>
+
+      <!-- Profil pour l'environnement de production -->
+      <profile>
+          <id>target-prod</id>
+          
+          <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>enforce-target-prod-no-snaphsot</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <configuration>
+                                <rules>
+                                    <!-- Le projet et son parent ne doivent pas être en SNAPSHOT -->
+                                    <requireReleaseVersion />
+                                    <!-- Aucune dépendance ne doit être en SNAPSHOT -->
+                                    <requireReleaseDeps />
+                                </rules>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+      </profile>
+  </profiles>
+
+  <!-- Construction -->
+  <build>
+    <finalName>escalade-webapp</finalName>
+    
+    <plugins>          
+	  <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-enforcer-plugin</artifactId>
+	        <version>1.4.1</version>
+	          <executions>
+	            <execution>
+	              <!-- je choisis un nom unique pour définir cette exécution -->
+	              <id>enforce-profile-target</id>
+	           
+	              <!-- je branche l'exécution à la phase "validate" -->
+	              <phase>validate</phase>
+	           
+	              <!-- cette exécution lancera le goal "enforce" -->
+	              <goals>
+	                <goal>enforce</goal>
+	              </goals>
+	             
+	              <!-- La configuration du plugin propre à cette exécution -->
+	              <configuration>
+	                <rules>
+	                  <requireActiveProfile>
+	              
+	                    <profiles>target-dev,target-test,target-prod</profiles>
+                        <all>false</all>
+	                  </requireActiveProfile>
+	                </rules>
+	              </configuration>
+	            </execution>
+	          </executions>
+	      </plugin>
+	      
+	      <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-war-plugin</artifactId>
+             <configuration>
+                 <webResources>
+                     <resource>
+                         <filtering>true</filtering>
+                         <directory>src/main/webapp</directory>
+                         <includes>
+                             <include>jsp/_include/header.jsp</include>
+                             <include>jsp/_include/footer.jsp</include>
+                             <include>jsp/about.jsp</include>
+                         </includes>
+                     </resource>
+                 </webResources>
+             </configuration>
+          </plugin>
+          
+          <!-- Apache Tomcat -->
+	      <plugin>
+	        <groupId>org.apache.tomcat.maven</groupId>
+	        <artifactId>tomcat7-maven-plugin</artifactId>
+	      </plugin>
+      </plugins>
+  </build>
+</project>

@@ -1,34 +1,190 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- ================================================== -->
-  <!-- ===== Informations du projet ===== -->
-  <!-- ================================================== -->
-  <!-- ===== Informations Maven ===== -->
-  <groupId>org.escalade.app</groupId>
+  <!-- Informations du projet -->
+  <!--  Informations Maven -->
+  <groupId>org.exemple.demo</groupId>
   <artifactId>escalade</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <!-- ===== Informations générales ===== -->
+  <!-- Informations générales -->
   <name>escalade</name>
   <url>http://maven.apache.org</url>
 
-  <!-- ================================================== -->
-  <!-- ===== Propriétés ===== -->
-  <!-- ================================================== -->
+  <!-- Propriétés -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-
-  <!-- ================================================== -->
-  <!-- ===== Modules ===== -->
-  <!-- ================================================== -->
+  
+  <!-- Distribution -->
+  <distributionManagement>
+      <site>
+          <id>site-projet</id>
+          <url>scp://exemple.org/www/</url>
+      </site>
+  </distributionManagement>
+  
+  <!-- Modules -->
   <modules>
-    <module>escalade-frontend</module>
-    <module>escalade-backend</module>
+  	<module>escalade-batch</module>
+  	<module>escalade-webapp</module>
+  	<module>escalade-consumer</module>
+  	<module>escalade-business</module>
+  	<module>escalade-model</module>
   </modules>
+  
+  <!-- Gestion des dépendances -->
+  <dependencyManagement>
+  	<dependencies>
+      <!-- ===== Modules ===== -->
+      <dependency>
+          <groupId>org.exemple.demo</groupId>
+          <artifactId>escalade-batch</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.exemple.demo</groupId>
+          <artifactId>escalade-webapp</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.exemple.demo</groupId>
+          <artifactId>escalade-business</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.exemple.demo</groupId>
+          <artifactId>escalade-consumer</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.exemple.demo</groupId>
+          <artifactId>escalade-model</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+      
+      <!-- Bibliothèques tierces -->
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-collections4</artifactId>
+          <version>4.1</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-text</artifactId>
+          <version>1.1</version>
+          <exclusions>
+              <!-- La dépendance vers commons-lang3 est exclue -->
+              <exclusion>
+                  <groupId>org.apache.commons</groupId>
+                  <artifactId>commons-lang3</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+          <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+          <groupId>javax.validation</groupId>
+          <artifactId>validation-api</artifactId>
+          <version>1.1.0.Final</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>org.apache.bval</groupId>
+          <artifactId>bval-jsr</artifactId>
+          <version>1.1.2</version>
+          <scope>runtime</scope>
+      </dependency>
+      
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>2.5</version>
+          <scope>provided</scope>
+      </dependency>
+      
+      <dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>jsp-api</artifactId>
+	    <version>2.2</version>
+        <scope>provided</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <reporting>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+              <version>2.7</version>
+          </plugin>
+      </plugins>
+  </reporting>
+  
+  <build>
+      <!-- Gestion des plugins -->
+      <pluginManagement>
+          <plugins>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-compiler-plugin</artifactId>
+                  <version>3.1</version>
+                  <configuration>
+                      <showDeprecation>true</showDeprecation>
+                      <showWarnings>true</showWarnings>
+                  </configuration>
+              </plugin>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-jar-plugin</artifactId>
+                  <version>3.0.2</version>
+              </plugin>
+              
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <version>3.1.0</version>
+              </plugin>
+              
+              <!-- Apache Tomcat -->
+		      <plugin>
+		        <groupId>org.apache.tomcat.maven</groupId>
+		        <artifactId>tomcat7-maven-plugin</artifactId>
+		        <version>2.0</version>
+		     </plugin>
+		     
+		     <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.0.0</version>
+             </plugin>
+             
+             <plugin>
+             	<groupId>org.apache.maven.plugins</groupId>
+             	<artifactId>maven-site-plugin</artifactId>
+             	<version>3.6</version>
+             	<configuration>
+                  <!-- Je veux le site en français -->
+                  <locales>fr</locales>
+             	</configuration>
+          	</plugin>
+          </plugins>
+      </pluginManagement>
+  </build>
 </project>
