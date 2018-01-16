@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faqs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/FML/1.0.1"
+      xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd"
+
+      title="Foire Aux Questions"
+      toplink="false">
+
+    <part id="general">
+        <title>Général</title>
+        <faq id="why-x">
+            <question>
+                Pourquoi cette application ?
+            </question>
+            <answer>
+                <p>
+                    Cette aplication a été créée dans le but de réunir 
+                    les connaissances de chacun afin que tout le monde puisse bénéficier 
+                    des savoirs, des expériences, des astuces sur l'escalade 
+                    tout comme la possibilité de gérer des topos 
+                    qui sont des ressources essentielles pour tous ceux qui souhaitent  
+                    pratiquer leur sport favori mais avant tout, cette application 
+                    est là pour rassembler des passionnées 
+                    d'escalade autour de leur passions afin de la partager 
+                    grace aux échanges entre utilisateurs.
+                </p>
+            </answer>
+        </faq>
+
+        <faq id="how-x">
+            <question>
+                Comment puis-je ... ?
+            </question>
+            <answer>
+                <p>...</p>
+            </answer>
+        </faq>
+    </part>
+
+    <part id="install">
+        <title>Installation</title>
+        <faq id="how-install">
+            <question>
+                Comment installer ... ?
+            </question>
+            <answer>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam architecto assumenda
+                    consequuntur delectus deleniti dolores dolorum ex excepturi explicabo ipsa, labore magnam maxime,
+                    modi
+                    nemo sint, sit veniam voluptate.
+                </p>
+                <source>apt-get install xxx</source>
+            </answer>
+        </faq>
+    </part>
+</faqs>

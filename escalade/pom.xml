@@ -11,7 +11,39 @@
 
   <!-- Informations générales -->
   <name>escalade</name>
-  <url>http://maven.apache.org</url>
+  <description>
+  	Application d'escalade permettant de partager diverses informations entre membres.
+  </description>
+  <url>http://localhost:8080/escalade/</url>
+  
+  <developers>
+    <developer>
+        <id>Florian Brun</id>
+        <name>Florian Brun</name>
+        <email>florianbrun271994@gmail.com</email>
+        <url>http://www.florian-brun.fr</url>
+        <organization>OpenClassRooms</organization>
+        <organizationUrl>http://openclassrooms.com/</organizationUrl>
+        <roles>
+            <role>Développeur</role>
+        </roles>
+        <timezone>1</timezone>
+    </developer>
+  </developers>
+ 
+  <contributors>
+	<contributor>
+		<name>Kévin Vavelin</name>
+		<email>vavelinkevin@gmail.com</email>
+		<url>https://openclassrooms.com/membres/vavelinkevin</url>
+		<organization>OpenclassRooms</organization>
+		<organizationUrl>http://openclassrooms.com/</organizationUrl>
+		<roles>
+			<role>Mentor</role>
+		</roles>
+		<timezone>1</timezone>
+	</contributor>
+  </contributors>
 
   <!-- Propriétés -->
   <properties>
@@ -23,8 +55,8 @@
   <!-- Distribution -->
   <distributionManagement>
       <site>
-          <id>site-projet</id>
-          <url>scp://exemple.org/www/</url>
+          <id>projet-escalade</id>
+          <url>http://localhost:8080/escalade</url>
       </site>
   </distributionManagement>
   
@@ -180,7 +212,7 @@
              	<artifactId>maven-site-plugin</artifactId>
              	<version>3.6</version>
              	<configuration>
-                  <!-- Je veux le site en français -->
+                  <!-- site en français -->
                   <locales>fr</locales>
              	</configuration>
           	</plugin>

@@ -15,7 +15,10 @@
   <artifactId>escalade-business</artifactId>
   <!-- Informations générales -->
   <name>escalade-business</name>
-  <url>http://maven.apache.org</url>
+  <description>
+  	Partie responsable de l’implémentation des règles de gestion fonctionnelles.
+  </description>
+  
   
   <!-- Propriétés -->
   <properties>

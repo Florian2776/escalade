@@ -11,6 +11,7 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   
+  
   <!--  Informations Maven --> 
   <artifactId>escalade-webapp</artifactId>
   <packaging>war</packaging>
@@ -32,13 +33,11 @@
   </properties>
   
   <!-- Informations générales -->
-  <!-- <name>escalade-webapp Maven Webapp</name> -->
-  <name>Escalade</name>
+  <name>escalade</name>
   <description>
-  	Application d'escalade permettant de partager 
-  	diverses informations entre membres.
+  	Application d'escalade permettant de partager diverses informations entre membres.
   </description>
-  <url>http://localhost:8080/escalade-webapp/</url>
+  <url>http://localhost:8080/escalade/</url>
   
   <organization>
   	<name>Club d'escalade</name>
@@ -148,7 +147,7 @@
 
   <!-- Construction -->
   <build>
-    <finalName>escalade-webapp</finalName>
+    <finalName>escalade</finalName>
     
     <plugins>          
 	  <plugin>

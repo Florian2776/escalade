@@ -15,7 +15,9 @@
   <artifactId>escalade-model</artifactId>
   <!-- Informations générales -->
   <name>escalade-model</name>
-  <url>http://maven.apache.org</url>
+  <description>
+  	Organisation et choix d’implémentation des données de l’application.
+  </description>
   
   <!-- Propriétés -->
   <properties>

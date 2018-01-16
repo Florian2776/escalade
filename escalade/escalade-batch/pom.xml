@@ -15,7 +15,9 @@
   <artifactId>escalade-batch</artifactId>
   <!-- Informations générales -->
   <name>escalade-batch</name>
-  <url>http://maven.apache.org</url>
+  <description>
+  	Module responsable du traitement par lots.
+  </description>
   
   <!-- Propriétés -->
   <properties>

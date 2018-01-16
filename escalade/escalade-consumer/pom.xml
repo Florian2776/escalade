@@ -15,7 +15,9 @@
   <artifactId>escalade-consumer</artifactId>
   <!-- Informations générales -->
   <name>escalade-consumer</name>
-  <url>http://maven.apache.org</url>
+  <description>
+  	Gestion de l’accès base de données et autres services web.
+  </description>
   
   <!-- Propriétés -->
   <properties>
