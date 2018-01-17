@@ -7,7 +7,7 @@
     <meta name="author" content="Florian Brun">
     <link rel="icon" href="../img/favicon.ico">
 
-    <title>Escalade</title>
+    <title>Accueil</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -21,17 +21,20 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Escalade</a>
+      <a class="navbar-brand" href="accueil.jsp">Escalade</a>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="accueil.jsp">Accueil<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Découvrir l'escalade</a>
+            <a class="nav-link" href="decouvrir.jsp">Découvrir l'escalade</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Mon compte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.jsp">Espace administrateur</a>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -49,32 +52,44 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <img class="first-slide" src="../img/index1.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block text-center">
+              <h1>Rechercher un site !</h1>
+              <p>
+                Trouvez le site de vos rêves en utilisant notre base de données !
+              	Actuellement plus de @0 sites répertoriés.
+              </p>
+              
+              <p><a class="btn btn-lg btn-primary" href="sites.jsp" role="button">rechercher un site</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" >
+          <img class="second-slide" src="../img/index2.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption d-none d-md-block text-left">
-              <h1>Example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <h1>L'importance de l'entraînement</h1>
+              <p>Ou comment éviter de se blesser bêtement, par @pseudo.</p>
+              <p><a class="btn btn-lg btn-primary" href="articles.jsp" role="button">voir l'article</a></p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+         <img class="third-slide" src="../img/index3.jpg" alt="Third slide">
           <div class="container">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption d-none d-md-block text-right">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            <div class="carousel-caption d-none d-md-block text-left">
+              <h1>Pas encore inscrit ?</h1>
+              <p>
+              	Inscrivez vous gratuitement pour profiter de tous les avantages de ce site !
+              	Les membres peuvent :
+              </p>
+              <ul>
+              	<li>rédiger des articles,</li>
+              	<li>partager/emprunter des topos,</li>
+              	<li>écrire des commentaires etc.</li>
+              </ul>
+              <p><a class="btn btn-lg btn-primary" href="inscription.jsp" role="button">S'inscrire</a></p>
             </div>
           </div>
         </div>
@@ -164,8 +179,8 @@
 
       <!-- FOOTER -->
       <footer>
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p class="float-right"><a href="#">Haut de page</a></p>
+        <p>&copy; 2018 OpenClassRooms &middot; <a href="http://www.florian-brun.fr">Florian Brun</a> &middot;</p>
       </footer>
 
     </div><!-- /.container -->

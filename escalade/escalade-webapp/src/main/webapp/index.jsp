@@ -4,8 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Application escalade">
+    <meta name="author" content="Florian Brun">
     <link rel="icon" href="./img/favicon.ico">
 
     <title>Escalade</title>
@@ -30,8 +30,9 @@
               <h3 class="masthead-brand">Escalade</h3>
               <nav class="nav nav-masthead">
                 <a class="nav-link active" href="./jsp/accueil.jsp">Accueil</a>
-                <a class="nav-link" href="#">Découvrir</a>
-                <a class="nav-link" href="#">Mon compte</a>
+                <a class="nav-link" href="./jsp/decouvrir.jsp">Découvrir</a>
+                <a class="nav-link" href="./jsp/compte.jsp">Mon compte</a>
+                <a class="nav-link" href="./jsp/admin.jsp">Espace administrateur</a>
               </nav>
             </div>
           </div>

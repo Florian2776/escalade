@@ -29,7 +29,7 @@
     <ul>
         <li>Application : ${application.name}</li>
         <li>Version : ${project.version}</li>
-        <li>Date du build : ${maven.build.timestamp}</li>
+        <%-- <li>Date du build : ${maven.build.timestamp}</li> --%>
     </ul>
 </div>
 
