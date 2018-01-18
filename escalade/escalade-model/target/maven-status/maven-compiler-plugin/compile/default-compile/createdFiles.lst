@@ -1,0 +1,12 @@
+org/escalade/model/beans/Secteur.class
+org/escalade/model/beans/BeanException.class
+org/escalade/model/beans/Commentaires.class
+org/escalade/model/beans/Site.class
+org/escalade/model/beans/Contacts.class
+org/escalade/model/beans/Voie.class
+org/escalade/model/beans/Articles.class
+org/escalade/model/beans/Utilisateur.class
+org/escalade/model/bdd/Noms.class
+org/escalade/model/beans/Utilisateur$Niveau.class
+org/escalade/model/beans/Topo.class
+org/escalade/model/App.class

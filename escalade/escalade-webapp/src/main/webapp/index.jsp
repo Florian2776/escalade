@@ -41,7 +41,7 @@
             <h1 class="cover-heading">Escalade</h1>
             <p class="lead">Application pour tous les passionnées d'escalade.</p>
             <p class="lead">
-              <a href="./jsp/accueil.jsp" class="btn btn-lg btn-secondary">Accueil</a>
+              <a href="./jsp/accueil.jsp" class="btn btn-lg btn-secondary" id="enter">Accueil</a>
             </p>
           </div>
 

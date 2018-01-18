@@ -29,7 +29,7 @@
     <ul>
         <li>Application : Escalade</li>
         <li>Version : 1.0-SNAPSHOT</li>
-        <li>Date du build : ${maven.build.timestamp}</li>
+        <%-- <li>Date du build : ${maven.build.timestamp}</li> --%>
     </ul>
 </div>
 

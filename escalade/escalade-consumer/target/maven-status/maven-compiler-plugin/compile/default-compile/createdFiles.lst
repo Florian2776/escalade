@@ -1,1 +1,6 @@
 org/escalade/consumer/App.class
+org/escalade/consumer/forms/ConnectionForm.class
+org/escalade/consumer/dao/UtilisateurDaoImpl.class
+org/escalade/consumer/dao/UtilisateurDao.class
+org/escalade/consumer/dao/DaoFactory.class
+org/escalade/consumer/dao/DaoException.class

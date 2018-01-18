@@ -60,7 +60,6 @@
                 Trouvez le site de vos rêves en utilisant notre base de données !
               	Actuellement plus de @0 sites répertoriés.
               </p>
-              
               <p><a class="btn btn-lg btn-primary" href="sites.jsp" role="button">rechercher un site</a></p>
             </div>
           </div>

@@ -9,6 +9,12 @@ a:hover {
   color: #fff;
 }
 
+#enter:hover {
+	background-color : brown;
+	color : white;
+	cursor: pointer;	
+}
+
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
