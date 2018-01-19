@@ -1,11 +1,14 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="application escalade">
     <meta name="author" content="Florian Brun">
     <link rel="icon" href="../img/favicon.ico">
+    
 
     <title>Découvrir</title>
 
@@ -57,12 +60,12 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Qu'est-ce que<span class="text-muted">l'escalade ?</span></h2>
+          <h2 class="featurette-heading">Qu'est-ce que <span class="text-muted">l'escalade ?</span></h2>
           <p class="lead">
            Définition de l'escalade selon les dictionnaires larousse :
           </p>
           
-          <ol>
+          <ol class="lead">
           	<li>Nom féminin, synonyme : varrape.</li>
           	<li>Action de grimper, de monter avec effort avec les pieds et les mains, ou de franchir quelque chose en grimpant : L'escalade d'un mur.</li>
           	<li>Ascension d'une paroi rocheuse d'une montagne, au cours de laquelle l'alpiniste progresse en utilisant ses quatre membres.</li>
@@ -88,25 +91,25 @@
           	et ce sport ne déroge pas à la règle ! 
           </p>
           
-          <p>
+          <p class="lead">
           	Ainsi, pour résumer tout bon pratiquant de sport doit avoir :
           </p>
           
-          <ul>
+          <ul class="lead">
           	<li>un corps dévellopé,</li>
           	<li>un esprit vif</li>
           	<li>un mental hors du commun</li>
           	<li>et du bon matériel.</li>
           </ul>
           
-          <p>
+          <p class="lead">
           	Bien sûr, un corps développé ne se fait pas du jour au lendemain, 
           	il est nécessaire cependant, pour progresser, de travailler 
           	son endurance, sa rapidité, sa force, 
           	ainsi que ses capacités de relachement et de souplesse. 
           </p>
           
-          <p>
+          <p class="lead">
           	Le fait de s’élever, de prendre de la hauteur, procure un sentiment 
           	de liberté en même de temps que de prise de risque.<br /> 
           	Bien que très sécuritaire, l’escalade demande de s’engager.<br /> 
@@ -116,7 +119,7 @@
           	Elle favorise aussi le développement de son intuition.
           </p>
           
-          <p>
+          <p class="lead">
           	Le grimpeur doit anticiper ses possibilités d’ascension mais aussi sa sécurité. 
           	Il doit aussi chercher et trouver l’itinéraire le plus adapté, gérer son effort, 
           	essayer parfois d’autres stratégies, ...<br/> 
@@ -125,7 +128,7 @@
           	avec son partenaire.
           </p>
           
-          <p>
+          <p class="lead">
           	La corde reliant le grimpeur et l’assureur symbolise la réalité d’une relation forte, 
           	basée sur la confiance et la solidarité (rcommuniquer, s'entraider, partager).
           </p>
@@ -144,7 +147,7 @@
             Pour les non-initiés, voici quelques éléments du vocabulaire du grimpeur :
           </p>
           
-          <ul>
+          <ul class="lead">
           	<li>Un site ou spot, c'est un lieu où il est possible de grimper</li>
           	<li>Les sites peuvent être découpés en plusieurs secteurs qui regroupent un ensemble de voies</li>
           	<li>« Lao Tzeu l'a dit : il faut trouver la voie » : c’est le chemin à emprunter par le grimpeur pour arriver à destination : le haut de la voie.</li>
@@ -155,7 +158,7 @@
           	<li>Un topo est un recueil contenant toutes les informations utiles sur les sites d’escalade d’une région (les secteurs, les voies, leur hauteur, leur cotation, le nombre de points…). Une bible quoi.</li>
           </ul>
           
-          <p>
+          <p class="lead">
           	Mais le meilleur des perles du vocabulaire des grimpeurs et sans aucun doute le nom des voies, dont l’honneur du baptême revient à celui qui l’a ouverte. Et autant vous le dire, les ouvreurs ne manquent pas d’imagination !!
           </p>
         </div>
@@ -180,9 +183,9 @@
            tout en développant à la fois sa confiance en soi et son humilité.
           </p>
           
-          <p>Je grimpe pour :</p>
+          <p class="lead">Je grimpe pour :</p>
           
-          <ul>
+          <ul class="lead">
           	<li>pour prendre de la hauteur et tester mon courage,
 				(développe l’esprit d’aventure, l’engagement, l'analyse du risque, le contrôle de ses émotions, la confiance en soi et aux autres).</li>
           	<li>pour ressentir le plaisir qu'a le corps à grimper, à se délier pour attraper une à une les prises,

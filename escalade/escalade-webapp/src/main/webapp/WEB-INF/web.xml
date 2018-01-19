@@ -1,16 +1,35 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+    <servlet>
+        <servlet-name>Servlet</servlet-name>
+        <servlet-class>org.escalade.business.servlets.Servlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Servlet</servlet-name>
+        <url-pattern>../jsp/accueil</url-pattern>
+    </servlet-mapping>
 
-<web-app>
-  <icon>
-  	<small-icon>favicon.ico</small-icon>
-  </icon>
+	<servlet>
+        <servlet-name>Inscription</servlet-name>
+        <servlet-class>org.escalade.business.servlets.Inscription</servlet-class>
+    </servlet>
 
-  <display-name>Escalade</display-name>
-  
-  <description>Application d'escalade permettant de partager diverses informations entre membres.</description>
-  
-  
-  
+    <servlet-mapping>
+        <servlet-name>Inscription</servlet-name>
+        <url-pattern>../jsp/inscription</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Suppression</servlet-name>
+        <servlet-class>org.escalade.business.servlets.Suppression</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Suppression</servlet-name>
+        <url-pattern>../jsp/suppression</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,6 +1,6 @@
-
+<%@ page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +30,7 @@
               <h3 class="masthead-brand">Escalade</h3>
               <nav class="nav nav-masthead">
                 <a class="nav-link active" href="./jsp/accueil.jsp">Accueil</a>
-                <a class="nav-link" href="./jsp/decouvrir.jsp">Découvrir</a>
+                <a class="nav-link" href="./jsp/decouvrir.jsp">DÃ©couvrir</a>
                 <a class="nav-link" href="./jsp/compte.jsp">Mon compte</a>
                 <a class="nav-link" href="./jsp/admin.jsp">Espace administrateur</a>
               </nav>
@@ -39,7 +39,7 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">Escalade</h1>
-            <p class="lead">Application pour tous les passionnées d'escalade.</p>
+            <p class="lead">Application pour tous les passionnÃ©es d'escalade.</p>
             <p class="lead">
               <a href="./jsp/accueil.jsp" class="btn btn-lg btn-secondary" id="enter">Accueil</a>
             </p>
@@ -47,7 +47,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Application réalisé pour <a href="http://openclassrooms.com">OpenClassRooms</a>, par <a href="http://www.florian-brun.fr">Florian Brun</a>.</p>
+              <p>Application rÃ©alisÃ© pour <a href="http://openclassrooms.com">OpenClassRooms</a>, par <a href="http://www.florian-brun.fr">Florian Brun</a>.</p>
             </div>
           </div>
 

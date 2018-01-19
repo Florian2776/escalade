@@ -1,3 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +30,7 @@
             <a class="nav-link" href="accueil.jsp">Accueil<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="decouvrir.jsp">Découvrir l'escalade</a>
+            <a class="nav-link" href="decouvrir.jsp">DÃ©couvrir l'escalade</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Mon compte</a>
@@ -52,10 +54,10 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">L'entraînement, exercice tout simplement <span class="text-muted">indispensable.</span></h2>
-          <p class="lead">Premier article sur l'entraînement, trop souvent sous-estimé et qui, pourtant, est primordiale.</p>
+          <h2 class="featurette-heading">L'entraÃ®nement, exercice tout simplement <span class="text-muted">indispensable.</span></h2>
+          <p class="lead">Premier article sur l'entraÃ®nement, trop souvent sous-estimÃ© et qui, pourtant, est primordiale.</p>
           <p>
-          	Quelques petits conseils afin d'éviter de vilaines douleurs, ou autres blessures :<br/>
+          	Quelques petits conseils afin d'Ã©viter de vilaines douleurs, ou autres blessures :<br/>
           	sur le site <a href="http://www.grimper.com/kine">www.grimper.com</a>, rubrique kine.        	          	
           </p>
         </div>

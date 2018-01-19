@@ -37,7 +37,7 @@
   <description>
   	Application d'escalade permettant de partager diverses informations entre membres.
   </description>
-  <url>http://localhost:8080/escalade/</url>
+  <url>http://localhost:8080/escalade-webapp/</url>
   
   <organization>
   	<name>Club d'escalade</name>
@@ -84,6 +84,11 @@
     <dependency>
 	    <groupId>javax.servlet.jsp</groupId>
 	    <artifactId>jsp-api</artifactId>
+	</dependency>
+	
+	<dependency>
+	    <groupId>jstl</groupId>
+	    <artifactId>jstl</artifactId>
 	</dependency>
     
     <dependency>
