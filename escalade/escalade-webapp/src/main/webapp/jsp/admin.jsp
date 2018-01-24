@@ -35,10 +35,10 @@
         </div>
         <button class="btn btn-lg btn-danger btn-block" type="reset">Effacer</button>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Se connecter</button>
-      	<a href="accueil.jsp">
-      		<button class="btn btn-lg btn-link btn-block">Accueil</button>
-      	</a>
       </form>
+      <a href="accueil.jsp">
+      	<button class="btn btn-lg btn-link btn-block">Accueil</button>
+      </a>
 
     </div> <!-- /container -->
 
