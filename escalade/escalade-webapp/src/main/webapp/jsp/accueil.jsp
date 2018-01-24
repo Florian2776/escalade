@@ -151,11 +151,19 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Site officiel de la<span class="text-muted">Fédération Française de la Montagne et de l'Escalade</span></h2>
+          <p class="lead">
+          	Pour en savoir plus sur les réglementations, sur des articles officiels, n'hésitez pas à jeter un oeil sur le site de la fédération !
+          </p>
+          <p>
+          	Il s'agit du seul site référençant tout les textes officiels tel que les règlements, les résultats ou autre infos.
+          </p>
+          <p>	
+          	Une seule adresse : <a href="http://www.ffme.fr/">www.ffme.fr</a> .
+          </p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-fluid mx-auto" data-src="../img/ffme.png" alt="Site de la fédération">
         </div>
       </div>
 
@@ -163,30 +171,35 @@
 
       <div class="row featurette">
         <div class="col-md-7 push-md-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Découvrez <span class="text-muted">Vertical Art :</span></h2>
+          <p class="lead">
+          	Découvrez <a href="http://www.vertical-art.fr/">vertical-art</a>,<br/>
+          	un ensemble de salles d'escalade, de salles de musculation, de fitness mais également bar/restaurant !   
+          </p>	
+          
+          <p>Trouvez le centre le plus proche de chez vous :</p>
+          
+          <ul>
+	        <li><a href="http://montigny.vertical-art.fr/">Saint quentin en Yveline</a></li>
+          	<li><a href="http://nantes.vertical-art.fr/">Nantes</a></li>
+          	<li><a href="http://rungis.vertical-art.fr/">Rungis</a></li>
+          	<li><a href="http://rouen.vertical-art.fr/">Rouen</a></li>
+          	<li><a href="http://lareunion.vertical-art.fr/">La Réunion</a></li>
+          	<li><a href="http://lyon.vertical-art.fr/">Lyon</a></li>
+          	<li><a href="http://lille.vertical-art.fr/">Lille</a></li>
+          	<li><a href="http://aix.vertical-art.fr/">Aix</a></li>
+          	<li><a href="http://grenoble.vertical-art.fr/">Grenoble</a></li>
+          </ul>
         </div>
         <div class="col-md-5 pull-md-7">
-          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="featurette-image img-fluid mx-auto" data-src="../img/vertical.png" alt="Site partenaire vertical art">
         </div>
       </div>
 
       <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
-
+      
 
       <!-- FOOTER -->
       <footer>

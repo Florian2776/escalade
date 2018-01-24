@@ -16,7 +16,7 @@
 
     <c:if test="${ !empty erreur }"><p style="color:red;"><c:out value="${ erreur }" /></p></c:if>
     
-	<form method="post" action="inscription">
+	<form method="post" action="inscription.jsp">
     	<p>
 	    	<label for="pseudo">Pseudo : </label>
 	    	<input type="text" name="pseudo" id="pseudo" />
@@ -50,9 +50,9 @@
         <p>
             <label for="experience">Niveau d'experience :</label>
             <select name="experience" id="experience" size="1">
-                <option value="debutant" selected>Débutant</option>
-                <option value="intermediaire">Intermédiaire</option>
-                <option value="expert">Expert</option>
+                <option value="1" selected>Débutant</option>
+                <option value="2">Intermédiaire</option>
+                <option value="3">Expert</option>
             </select>
         </p>
 
@@ -71,10 +71,10 @@
     </form>
     
     <h2>Liste des utilisateurs inscrits :</h2>
-    <ul>
+    <%-- <ul>
 	    <c:forEach var="utilisateur" items="${ utilisateurs }">
 	    	<li><c:out value="${ utilisateur.pseudo }" /></li>
 	    </c:forEach>
-	</ul>    
+	</ul>  --%>   
 </body>
 </html>

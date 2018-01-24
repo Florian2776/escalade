@@ -1,6 +1,8 @@
 package org.escalade.business.servlets;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,18 +38,33 @@ public class Inscription extends HttpServlet {
 
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         try {
-            Utilisateur utilisateur = new Utilisateur();
-//            utilisateur.setPseudo(request.getParameter("pseudo"));
-//            utilisateur.setNom(request.getParameter("nom"));
-//            utilisateur.setPrenom(request.getParameter("prenom"));
-//            if (request.getParameter("mdp").compareTo(request.getParameter("mdp2")) != 0) {
-//                throw new ServletException("Les mots de passes ne sont pas identiques");
-//            }
-//            utilisateur.setPassword(request.getParameter("mdp"));
-//            utilisateur.setExperience(request.getParameter("exp"));
-//            utilisateur.setEmail(request.getParameter("email"));
-//            utilisateur.setTel(request.getParameter("tel"));
-
+        	
+        	if (request.getParameter("mdp").compareTo(request.getParameter("mdp2")) != 0) {
+                throw new ServletException("Les mots de passes ne sont pas identiques");
+            }
+        	
+        	// conversions 
+        	String date = request.getParameter("naissance");
+        	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
+        	Date d = sdf.parse(date);
+        	int exp = Integer.parseInt(request.getParameter("exp"));
+        	
+        	// TODO 
+        	// gestion des identifiants uniques /!\ 
+        	
+            Utilisateur utilisateur = new Utilisateur(
+            		-1,
+            		request.getParameter("pseudo"),
+            		request.getParameter("nom"),
+            		request.getParameter("prenom"),
+            		request.getParameter("email"),
+            		request.getParameter("tel"),
+            		d,
+            		request.getParameter("mdp"),
+            		exp,
+            		0, 0, 0, 0, true
+            		);
+            
             utilisateurDao.ajouter(utilisateur);
             request.setAttribute("utilisateurs", utilisateurDao.lister());
         }
